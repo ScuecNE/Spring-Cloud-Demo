@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: consumer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+server:
+  port: 8081
+  servlet:
+    context-path: /consumer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka/
+
+ribbon:
+  eureka:
+    enabled: true

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: producer
+
+server:
+  port: 8080
+  servlet:
+    context-path: /producer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka/
+    register-with-eureka: true
