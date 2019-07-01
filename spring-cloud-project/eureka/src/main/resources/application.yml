@@ -6,13 +6,12 @@ server:
   port: 8000
 
 eureka:
+  instance:
+    hostname: localhost
   client:
-    allow-redirects: false
+    register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://127.0.0.1:8000/eureka/
-  instance:
-    hostname: eureka
-    appname: eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
-    enable-self-preservation: true
+    enable-self-preservation: false
