@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/demoConsumer")
+@RequestMapping("/demoConsumer")
 public class DemoController {
 
     @Autowired
     private DemoService demoService;
 
     @RequestMapping(value = "/index")
-    public String remote(@RequestParam(value = "name", required = false) String name) {
+    public String index(@RequestParam(value = "name", required = false) String name) {
         return demoService.getHello(name);
     }
 
