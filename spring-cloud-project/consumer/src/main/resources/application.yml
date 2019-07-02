@@ -7,11 +7,6 @@ server:
   servlet:
     context-path: /consumer
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8000/eureka/
-
 feign:
   hystrix:
     enabled: true
@@ -20,4 +15,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream, refresh
