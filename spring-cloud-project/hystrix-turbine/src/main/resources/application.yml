@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: hystrix-turbine
+
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka/
+
+turbine:
+  app-config: consumer
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+  instanceUrlSuffix:
+    cunsumer: cunsumer/actuator/hystrix.stream
