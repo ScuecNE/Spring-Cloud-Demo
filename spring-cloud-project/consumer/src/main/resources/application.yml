@@ -1,6 +1,11 @@
 spring:
   application:
     name: consumer
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 
 server:
   port: 8081
@@ -15,4 +20,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream, refresh
+        include: hystrix.stream, bus-refresh
