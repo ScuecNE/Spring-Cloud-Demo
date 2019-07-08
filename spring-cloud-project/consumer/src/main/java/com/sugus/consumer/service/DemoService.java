@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 @Component
-@FeignClient(name = "producer", path = "/producer", fallback = DemoServiceHystrix.class)
+@FeignClient(name = "producer", fallback = DemoServiceHystrix.class)
 public interface DemoService {
 
     @GetMapping("/demoProducer/getHello")
