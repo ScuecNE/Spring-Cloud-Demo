@@ -7,8 +7,11 @@
 3.producer: http://localhost:8080  
 4.consumer: http://localhost:8081  
 5.hystrix-turbine: http://localhost:8002  
-6.config-server: http://localhost:8003 
+6.config-server: http://localhost:8003  
+7.zuul: http://localhost:8004  
 
 ## 更新日志
-2019/07/02 新增turbine项目，若监听项目配置了context-path，则turbine因无法找到上下文而监听不到
+2019/07/02  新增turbine项目，若监听项目配置了context-path，则turbine因无法找到上下文而监听不到  
+
+2019/07/08  新增zuul路由后，可删除context-path配置，现在turbine可重新聚合监听服务接口情况
 
