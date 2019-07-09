@@ -13,5 +13,3 @@ turbine:
   app-config: consumer
   cluster-name-expression: new String("default")
   combine-host-port: true
-  instanceUrlSuffix:
-    cunsumer: cunsumer/actuator/hystrix.stream
