@@ -22,11 +22,13 @@
 ## 操作步骤
 1.hystrix dashboard  
 
-    打开http://localhost:8001/hystrix，输入框输入http://localhost:8081/actuator/hystrix.stream，查看consumer信息。或者输入http://localhost:8080/turbine.stream，查看所有服务的聚合信息
+    打开http://localhost:8001/hystrix  
+    输入框输入http://localhost:8081/actuator/hystrix.stream，查看consumer信息  
+    或者输入http://localhost:8080/turbine.stream，查看所有服务的聚合信息
   
 2.config-server
 
-    curl -X POST http://localhost:12000/actuator/bus-refresh/，post执行以刷新最新配置  
+    curl -X POST http://localhost:8003/actuator/bus-refresh/，post执行以刷新最新配置  
 
 3.admin-server
 
