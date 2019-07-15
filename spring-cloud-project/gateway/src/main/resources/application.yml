@@ -6,6 +6,17 @@ spring:
       discovery:
         locator:
           enabled: true
+      routes:
+        - id: consumer
+          uri: lb://CONSUMER
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/consumer/fallback
 
 server:
   port: 8004

@@ -6,8 +6,8 @@ import io.github.bucket4j.Bucket4j;
 import io.github.bucket4j.Refill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ServerWebExchange;
@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class RateLimitByIpGatewayFilter implements GatewayFilter, Ordered {
+public class RateLimitByIpGatewayFilter implements GlobalFilter, Ordered {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RateLimitByIpGatewayFilter.class);
 
@@ -32,12 +32,12 @@ public class RateLimitByIpGatewayFilter implements GatewayFilter, Ordered {
     /**
      * 每次补充token数量
      */
-    int refillTokens;
+    private int refillTokens;
 
     /**
      * 补充token的时间间隔
      */
-    Duration refillDuration;
+    private Duration refillDuration;
 
     public RateLimitByIpGatewayFilter() {
     }
