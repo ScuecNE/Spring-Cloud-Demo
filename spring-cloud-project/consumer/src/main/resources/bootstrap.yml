@@ -12,3 +12,19 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8000/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: "client"
+      user.password: "client"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
