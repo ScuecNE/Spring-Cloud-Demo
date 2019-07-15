@@ -6,6 +6,10 @@ spring:
       enabled: true
       trace:
         enabled: true
+  security:
+    user:
+      name: "client"
+      password: "client"
 
 server:
   port: 8081
@@ -18,4 +22,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream, bus-refresh
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
