@@ -19,12 +19,12 @@ spring:
                 fallbackUri: forward:/consumer/fallback
 
 server:
-  port: 8004
+  port: 10310
 
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8000/eureka/
+      defaultZone: http://127.0.0.1:10210/eureka/
 #logging:
 #  level:
 #    org.springframework.cloud.gateway: debug

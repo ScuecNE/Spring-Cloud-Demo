@@ -11,7 +11,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8000/eureka/
+      defaultZone: http://127.0.0.1:10210/eureka/
     registry-fetch-interval-seconds: 5
   instance:
     lease-renewal-interval-in-seconds: 10
