@@ -13,12 +13,12 @@ spring:
         enabled: true
 
 server:
-  port: 8003
+  port: 10510
 
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8000/eureka/
+      defaultZone: http://127.0.0.1:10210/eureka/
 management:
   endpoints:
     web:

@@ -3,11 +3,11 @@ spring:
     name: hystrix-turbine
 
 server:
-  port: 8002
+  port: 10410
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8000/eureka/
+      defaultZone: http://127.0.0.1:10210/eureka/
 
 turbine:
   app-config: consumer
